@@ -16,7 +16,7 @@ public class Pets {
     }
 
     public String getPetName (){
-        return getPetName();
+        return petName;
     }
 
     public void setPetName(){
@@ -24,7 +24,7 @@ public class Pets {
     }
 
     public String getPetSpecies(){
-        return getPetSpecies();
+        return petSpecies;
     }
 
     public void setPetSpecies(){

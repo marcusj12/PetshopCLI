@@ -4,14 +4,14 @@ import java.util.List;
 
 public class PetShop {
     private String petShopName;
-    private List<PetShop> availableAnimals;
-    private List<PetShop> soldAnimals;
+    private List<PetShop> availablePets;
+    private List<PetShop> soldPets;
 
     // We are essentially using constructors to make up the parameters of the pet shop object; objects mimic real world things
-    public PetShop(String petShopName, List<PetShop> availableAnimals, List<PetShop> soldAnimals) {
+    public PetShop(String petShopName) {
         this.petShopName = petShopName;
-        this.availableAnimals = availableAnimals;
-        this.soldAnimals = soldAnimals;
+        this.availablePets = availablePets;
+        this.soldPets = soldPets;
 
     }
 
@@ -23,32 +23,35 @@ public class PetShop {
         this.petShopName = petShopName;
     }
 
-    public List<PetShop> getAvailableAnimals() {
-        return availableAnimals;
+    public List<PetShop> getAvailablePets() {
+        return availablePets;
     }
 
-    public void setAvailableAnimals(List<PetShop> availableAnimals) {
-        this.availableAnimals = availableAnimals;
+    public void setAvailablePets(List<PetShop> availablePets) {
+        this.availablePets = availablePets;
     }
 
-    public List<PetShop> getSoldAnimals() {
-        return soldAnimals;
+    public List<PetShop> getSoldPets() {
+        return soldPets;
     }
 
-    public void setSoldAnimals(List<PetShop> soldAnimals) {
-        this.soldAnimals = soldAnimals;
+    public void setSoldPets(List<PetShop> soldAnimals) {
+        this.soldPets = soldPets;
     }
 
     @Override
     public String toString() {
-        return "petShopName='" + petShopName + '\'' + "availableAnimals='" + availableAnimals + '\'' +
-                "soldAnimals='" + soldAnimals;
+        return "petShopName='" + petShopName + '\'' + "availablePets='" + availablePets + '\'' +
+                "soldPets='" + soldPets;
     }
 
     public void buyAnimal (String petName) {
-        for (int i = 0; i < availableAnimals.size(); i++) {
-            if (petName.equals(availableAnimals.size(i).getPetName())) {
-                availableAnimals.add((PetShop) soldAnimals);
+        for (int i = 0; i < availablePets.size(); i++) {
+            if (petName.equals(availablePets.get(i).getAvailablePets())){
+                System.out.println();
+                soldPets.add(availablePets.get(i));
+                availablePets.remove(i);
+
             }
 
 
