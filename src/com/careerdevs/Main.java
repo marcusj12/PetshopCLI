@@ -12,7 +12,37 @@ public class Main {
 
 
         PetShop petShop1 = new PetShop("4 Paws");
+        petShop1.getAvailablePets().add(pet1);
+        petShop1.getAvailablePets().add(pet2);
+        petShop1.getAvailablePets().add(pet3);
 
         System.out.println("Hello Welcome to the" + petShop1.getPetShopName() + "petshop.");
+
+        while (true){
+            System.out.println("Would you like to: \n(1) Buy a Animal \n(2) Return Animal");
+            int res = 0;
+
+            try{
+                res = scanner.nextInt();
+                scanner.nextLine();
+            } catch (Exception ex){
+
+            }
+            if (res == 2) {
+                System.out.println("You're now returning a pet");
+                for (int i =0; i <petShop1.getSoldPets().size(); i++){
+                    System.out.println(petShop1.getSoldPets().get(i));
+                }
+                break;
+            } else if (res ==1){
+                System.out.println("Which pet would you like to adopt? Input pet name");
+                for (int i = 0; i < petShop1.getAvailablePets().size(); i++){
+                    System.out.println(petShop1.getAvailablePets().size(); i++);
+                }
+
+            }
+        }
+
+        scanner.nextLine();
     }
 }

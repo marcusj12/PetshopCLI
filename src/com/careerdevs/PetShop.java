@@ -41,20 +41,31 @@ public class PetShop {
 
     @Override
     public String toString() {
-        return "petShopName='" + petShopName + '\'' + "availablePets='" + availablePets + '\'' +
+        return "petShopName='" + petShopName + '\'' +
+                "availablePets='" + availablePets + '\'' +
                 "soldPets='" + soldPets;
     }
 
-    public void buyAnimal (String petName) {
+    public void buyPet (String petName) {
         for (int i = 0; i < availablePets.size(); i++) {
             if (petName.equals(availablePets.get(i).getAvailablePets())){
-                System.out.println();
+                System.out.println("This pet is ready to be purchased");
                 soldPets.add(availablePets.get(i));
                 availablePets.remove(i);
 
             }
 
 
+        }
+    }
+
+    public void returnPet(String petName) {
+        for (int i = 0; i < soldPets.size(); i++){
+            if (petName.equals(soldPets.get(i).getSoldPets())){
+                System.out.println("This pet has already been sold");
+                availablePets.add(soldPets.get(i));
+                soldPets.remove(i);
+            }
         }
     }
 }
